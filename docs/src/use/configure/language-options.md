@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 ::: tip
-This page explains how to configure language options using the flat config format. For the deprecated eslintrc format, [see the deprecated documentation](language-options-deprecated).
+This page explains how to configure language options using the flat config format.
 :::
 
 The JavaScript ecosystem has a variety of runtimes, versions, extensions, and frameworks. Each of these can have different supported syntax and global variables. ESLint lets you configure language options specific to the JavaScript used in your project, like custom global variables. You can also use plugins to extend ESLint to support your project's language options.
@@ -45,7 +45,7 @@ If you are using the built-in ESLint parser, you can additionally change how ESL
 
 - `allowReserved` - allow the use of reserved words as identifiers (if `ecmaVersion` is `3`).
 - `ecmaFeatures` - an object indicating which additional language features you'd like to use:
-    - `globalReturn` - allow `return` statements in the global scope.
+    - `globalReturn` - allow `return` statements in the global scope. This option only applies when `languageOptions.sourceType` is set to `"script"`. When `languageOptions.sourceType` is set to `"commonjs"`, top-level `return` statements are allowed regardless of this option. When `languageOptions.sourceType` is set to `"module"`, top-level `return` statements are not allowed even if this option is set to `true`.
     - `impliedStrict` - enable global [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (if `ecmaVersion` is `5` or greater).
     - `jsx` - enable [JSX](https://facebook.github.io/jsx/).
 
